@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Overview Screen -->
+    <dimen name="overview_textUsage_leftSpace">20dip</dimen>
+    <dimen name="overview_textUsage_topSpace">50dip</dimen>
+    <dimen name="overview_textUsage_textHeight">80sp</dimen>
+    <dimen name="overview_textTotals_textHeight">40sp</dimen>
+    <dimen name="overview_textSlash_leftSpace">20dip</dimen>
+    <dimen name="overview_textSlash_rightSpace">10dip</dimen>
+    <dimen name="overview_text_smallLabelsHeight">16sp</dimen>
+    
+    <dimen name="overview_button_space">10dip</dimen>
+    
+</resources>

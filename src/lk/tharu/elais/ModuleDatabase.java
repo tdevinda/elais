@@ -52,12 +52,6 @@ public class ModuleDatabase {
 
 		@Override
 		public void onCreate(SQLiteDatabase db) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			db.execSQL("create table "+ TABLE_STATIONS + "(" +
 					col_stationID + " integer primary key autoincrement," +
 					col_stationName + " text," +
@@ -86,6 +80,11 @@ public class ModuleDatabase {
 					col_entryStation + " text,"+
 					col_entryFuel + " text)"
 					);
+		}
+
+		@Override
+		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+			
 			
 		}
 		

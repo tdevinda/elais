@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -16,5 +16,32 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    
+    <style name="overview_text_usage">
+        <item name="android:textSize">@dimen/overview_textUsage_textHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+        <item name="android:textStyle">bold</item>
+        
+    </style>
+    
+    <style name="overview_text_totals">
+        <item name="android:textSize">@dimen/overview_textTotals_textHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+        <item name="android:textStyle">bold</item>
+        
+    </style>
+    
+    <style name="overview_text_smallLabels">
+        <item name="android:textSize">@dimen/overview_text_smallLabelsHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+		    
+    </style>
+    
+    
+    
+    <!--  Colors -->
+    <color name="overview_defaultWhite">#FFFFFF</color>
+    <color name="overview_defaultBlack">#000000</color>
 
 </resources>

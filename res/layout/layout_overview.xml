@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView 
+        android:id="@+id/text_overview_usage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginLeft="@dimen/overview_textUsage_leftSpace"
+        android:layout_marginTop="@dimen/overview_textUsage_topSpace"
+        android:textAppearance="@style/overview_text_usage"
+        android:text="100"
+        />
+    
+    <TextView 
+        android:id="@+id/text_overview_slash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignBottom="@+id/text_overview_usage"
+        android:layout_toRightOf="@+id/text_overview_usage"
+        android:layout_marginLeft="@dimen/overview_textSlash_leftSpace"
+        android:layout_marginRight="@dimen/overview_textSlash_rightSpace"
+        android:textAppearance="@style/overview_text_totals"
+        android:text="@string/overview_slashMark"
+        />
+    
+    <TextView 
+        android:id="@+id/text_overview_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignBottom="@+id/text_overview_usage"
+        android:layout_toRightOf="@+id/text_overview_slash"
+        android:textAppearance="@style/overview_text_totals"
+        android:text="300"
+        />
+    
+    <TextView 
+        android:id="@+id/text_overview_litresLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_above="@+id/text_overview_total"
+        android:layout_toRightOf="@+id/text_overview_slash"
+        
+        android:textAppearance="@style/overview_text_smallLabels"
+        android:text="@string/overview_litres"
+        />
+    
+    
+    <Button
+        android:id="@+id/btn_overview_searchStations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/overview_button_space"
+        android:text="@string/overview_searchStations" />
+    
+     
+    <Button
+        android:id="@+id/btn_overview_searchStations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/overview_button_space"
+        android:text="@string/overview_showHistory" />
+    
+    
+    
+    
+
+</RelativeLayout>
