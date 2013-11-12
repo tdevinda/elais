@@ -43,8 +43,6 @@ public class ModuleDatabase {
 	
 	
 	
-	
-	
 	class DBHelper extends SQLiteOpenHelper {
 
 		public DBHelper(Context context, String name, CursorFactory factory, int version) {
@@ -75,6 +73,18 @@ public class ModuleDatabase {
 					col_fuelLiquidGas + " integer," +
 					col_serviceAir + " integer," +
 					col_serviceMarket + " integer)"
+					);
+			
+			db.execSQL("create table "+ TABLE_REFILLS + ") "+
+					col_entryID +" integer primary key autoincrement,"+
+					col_entrytime +" text,"+
+					col_entryLitres +" text,"+
+					col_entryCardID + " text,"+
+					col_entryTransID +" text,"+
+					col_entryCost + " text,"+
+					col_entryBalance + " text,"+
+					col_entryStation + " text,"+
+					col_entryFuel + " text)"
 					);
 			
 		}
