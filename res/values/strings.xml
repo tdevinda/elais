@@ -4,7 +4,7 @@
 	
     
     <!-- overview screen -->
-    <string name="overview_litres">LITRES</string>
+    <string name="overview_litres">LITRES REMAIN</string>
     <string name="overview_slashMark">/</string>
     <string name="overview_searchStations">SEARCH</string>
     <string name="overview_showHistory">HISTORY</string>
