@@ -8,4 +8,7 @@
     <string name="overview_slashMark">/</string>
     <string name="overview_searchStations">SEARCH</string>
     <string name="overview_showHistory">HISTORY</string>
+    
+    <!-- Staion entry -->
+    <string name="stationEntry_directionsDescription">Directions to station</string>
 </resources>

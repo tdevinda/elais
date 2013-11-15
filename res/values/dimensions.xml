@@ -12,4 +12,12 @@
     
     <dimen name="overview_button_space">10dip</dimen>
     
+    
+    <!-- Station Entry -->
+    <dimen name="stationEntry_name_leftSpace">10dip</dimen>
+    <dimen name="stationEntry_name_topSpace">10dip</dimen>
+    <dimen name="stationEntry_name_textHeight">18sp</dimen>
+    <dimen name="stationEntry_area_topSpace">5dip</dimen>
+    <dimen name="stationEntry_area_textHeight">16sp</dimen>
+    <dimen name="stationEntry_address_textHeight">12sp</dimen>
 </resources>

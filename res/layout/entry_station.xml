@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+    <TextView 
+        android:id="@+id/text_entryStation_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        
+        android:layout_marginLeft="@dimen/stationEntry_name_leftSpace"
+        android:layout_marginTop="@dimen/stationEntry_name_topSpace"
+        
+        android:textSize="@dimen/stationEntry_name_textHeight"
+        android:text="Elais Super" />
+    
+    <TextView 
+        android:id="@+id/text_entryStation_area"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/text_entryStation_name"
+        
+        android:layout_marginLeft="@dimen/stationEntry_name_leftSpace"
+        android:layout_marginTop="@dimen/stationEntry_area_topSpace"
+        
+        android:textSize="@dimen/stationEntry_area_textHeight"
+        android:text="Funky Town" />
+    
+    <TextView 
+        android:id="@+id/text_entryStation_address"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/text_entryStation_area"
+        
+        android:layout_marginLeft="@dimen/stationEntry_name_leftSpace"
+        android:layout_marginTop="@dimen/stationEntry_area_topSpace"
+        
+        android:textSize="@dimen/stationEntry_address_textHeight"
+        android:text="16, Memory Lane" />
+    
+    <ImageView 
+        android:id="@+id/image_entryStation_directions"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/stationEntry_directionsDescription"
+        android:src="@android:drawable/ic_menu_directions"
+        />
+    
+    <TextView 
+        android:id="@+id/text_entryStation_distance"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        
+		android:layout_toLeftOf="@+id/image_entryStation_directions"
+		android:layout_centerInParent="true"
+		
+        android:textSize="@dimen/stationEntry_area_textHeight"
+        android:text="30 km" />
+
+</RelativeLayout>

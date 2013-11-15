@@ -1,5 +1,6 @@
 package lk.tharu.elais;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -9,31 +10,31 @@ public class ModuleDatabase {
 	
 	protected static final String DB_NAME = "elaisdb"; 
 	protected static final String TABLE_STATIONS = "stations";
-	private static final String col_stationID = "sid";
-	private static final String col_stationName = "stname";
-	private static final String col_stationLatitute = "stlati";
-	private static final String col_stationLongitude = "stlong";
-	private static final String col_stationAddress = "staddr";
-	private static final String col_stationArea = "starea";
-	private static final String col_fuelPetrol90 = "fuelp90";
-	private static final String col_fuelPetrol95 = "fuelp95";
-	private static final String col_fuelPetrolEuro = "fueleur";
-	private static final String col_fuelDieselRegular = "fueldrg";
-	private static final String col_fuelDieselSuper = "fueldsp";
-	private static final String col_fuelLiquidGas = "fuellpg";
-	private static final String col_serviceAir = "srvair";
-	private static final String col_serviceMarket = "srvmkt";
+	public static final String col_stationID = "sid";
+	public static final String col_stationName = "stname";
+	public static final String col_stationLatitute = "stlati";
+	public static final String col_stationLongitude = "stlong";
+	public static final String col_stationAddress = "staddr";
+	public static final String col_stationArea = "starea";
+	public static final String col_fuelPetrol90 = "fuelp90";
+	public static final String col_fuelPetrol95 = "fuelp95";
+	public static final String col_fuelPetrolEuro = "fueleur";
+	public static final String col_fuelDieselRegular = "fueldrg";
+	public static final String col_fuelDieselSuper = "fueldsp";
+	public static final String col_fuelLiquidGas = "fuellpg";
+	public static final String col_serviceAir = "srvair";
+	public static final String col_serviceMarket = "srvmkt";
 	
 	protected static final String TABLE_REFILLS = "refills";
-	private static final String col_entryID = "eid";
-	private static final String col_entrytime = "etime";
-	private static final String col_entryLitres = "evolume";
-	private static final String col_entryCardID = "ecid";
-	private static final String col_entryTransID = "etrid";
-	private static final String col_entryCost = "ecost";
-	private static final String col_entryBalance = "ebal";
-	private static final String col_entryStation = "estation";
-	private static final String col_entryFuel = "etype";
+	public static final String col_entryID = "eid";
+	public static final String col_entrytime = "etime";
+	public static final String col_entryLitres = "evolume";
+	public static final String col_entryCardID = "ecid";
+	public static final String col_entryTransID = "etrid";
+	public static final String col_entryCost = "ecost";
+	public static final String col_entryBalance = "ebal";
+	public static final String col_entryStation = "estation";
+	public static final String col_entryFuel = "etype";
 	
 	private Context context;
 	
@@ -42,11 +43,42 @@ public class ModuleDatabase {
 	}
 	
 	
+	public void deleteAllStations() {
+		DBHelper helper = new DBHelper();
+		SQLiteDatabase db = helper.getWritableDatabase();
+		
+		db.delete(TABLE_STATIONS, null, null);
+		db.close(); helper.close();
+	}
+	
+	public void addBogusStation(String name, String area, String lat, String lon) {
+		DBHelper helper = new DBHelper();
+		SQLiteDatabase db = helper.getWritableDatabase();
+		
+		ContentValues cv = new ContentValues();
+		cv.put(col_stationName, name);
+		cv.put(col_stationArea, area);
+		cv.put(col_stationLatitute, lat);
+		cv.put(col_stationLongitude, lon);
+		
+		db.insert(TABLE_STATIONS, null, cv);
+		db.close();
+		helper.close();
+		cv = null;
+		
+	}
+	
+	
+	public DBHelper getDBHelper() {
+		DBHelper helper = new DBHelper();
+		return helper;
+	}
+	
 	
 	class DBHelper extends SQLiteOpenHelper {
 
-		public DBHelper(Context context, String name, CursorFactory factory, int version) {
-			super(context, name, factory, version);
+		public DBHelper() {
+			super(context, DB_NAME, null, 1);
 			// TODO Auto-generated constructor stub
 		}
 
@@ -69,7 +101,7 @@ public class ModuleDatabase {
 					col_serviceMarket + " integer)"
 					);
 			
-			db.execSQL("create table "+ TABLE_REFILLS + ") "+
+			db.execSQL("create table "+ TABLE_REFILLS + "( "+
 					col_entryID +" integer primary key autoincrement,"+
 					col_entrytime +" text,"+
 					col_entryLitres +" text,"+
