@@ -43,9 +43,11 @@ public class ActivityOverview extends Activity {
 			public void onClick(View view) {
 				ModuleDatabase mdb = new ModuleDatabase(getApplicationContext());
 				mdb.deleteAllStations();
-				mdb.addBogusStation("Felix Perera", "Horton Place", "6.911351", "79.86494");
-				mdb.addBogusStation("SS Kotalawela", "Narahenpita", "6.911351", "79.86494");
-				mdb.addBogusStation("Kottawa Lanka", "Kottawa", "6.840853", "79.965844");
+				mdb.addBogusStation("Felix Perera", "Horton Place", 6.911351, 79.86494);
+				mdb.addBogusStation("SS Kotalawela", "Narahenpita", 6.911351, 79.86494);
+				mdb.addBogusStation("Kottawa Lanka", "Kottawa", 6.840853, 79.965844);
+				
+				mdb.getNearbyStations(6.75, 79.89, 0.1);
 				
 			}
 		});

@@ -14,7 +14,8 @@
         android:layout_marginLeft="@dimen/stationEntry_name_leftSpace"
         android:layout_marginTop="@dimen/stationEntry_name_topSpace"
         
-        android:textSize="@dimen/stationEntry_name_textHeight"
+        
+        android:textAppearance="@style/stationsEntry_text_names"
         android:text="Elais Super" />
     
     <TextView 
@@ -28,7 +29,7 @@
         android:layout_marginLeft="@dimen/stationEntry_name_leftSpace"
         android:layout_marginTop="@dimen/stationEntry_area_topSpace"
         
-        android:textSize="@dimen/stationEntry_area_textHeight"
+        android:textAppearance="@style/stationsEntry_text_areas"
         android:text="Funky Town" />
     
     <TextView 
@@ -42,7 +43,7 @@
         android:layout_marginLeft="@dimen/stationEntry_name_leftSpace"
         android:layout_marginTop="@dimen/stationEntry_area_topSpace"
         
-        android:textSize="@dimen/stationEntry_address_textHeight"
+        android:textAppearance="@style/stationsEntry_text_adresses"
         android:text="16, Memory Lane" />
     
     <ImageView 
@@ -64,7 +65,7 @@
 		android:layout_toLeftOf="@+id/image_entryStation_directions"
 		android:layout_centerInParent="true"
 		
-        android:textSize="@dimen/stationEntry_area_textHeight"
+        android:textAppearance="@style/stationsEntry_text_distances"
         android:text="30 km" />
 
 </RelativeLayout>

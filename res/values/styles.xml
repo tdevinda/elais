@@ -38,7 +38,29 @@
 		    
     </style>
     
+    <style name="stationsEntry_text_names">
+        <item name="android:textSize">@dimen/stationEntry_name_textHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     
+    <style name="stationsEntry_text_areas">
+        <item name="android:textSize">@dimen/stationEntry_area_textHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    
+    
+    <style name="stationsEntry_text_adresses">
+        <item name="android:textSize">@dimen/stationEntry_address_textHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+    </style>
+    
+    <style name="stationsEntry_text_distances">
+        <item name="android:textSize">@dimen/stationEntry_area_textHeight</item>
+        <item name="android:textColor">@color/overview_defaultBlack</item>
+        
+    </style>
     
     <!--  Colors -->
     <color name="overview_defaultWhite">#FFFFFF</color>

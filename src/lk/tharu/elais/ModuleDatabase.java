@@ -2,9 +2,10 @@ package lk.tharu.elais;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class ModuleDatabase {
 	
@@ -51,7 +52,7 @@ public class ModuleDatabase {
 		db.close(); helper.close();
 	}
 	
-	public void addBogusStation(String name, String area, String lat, String lon) {
+	public void addBogusStation(String name, String area, double lat, double lon) {
 		DBHelper helper = new DBHelper();
 		SQLiteDatabase db = helper.getWritableDatabase();
 		
@@ -65,6 +66,30 @@ public class ModuleDatabase {
 		db.close();
 		helper.close();
 		cv = null;
+		
+	}
+	
+	public void getNearbyStations(double currentLat, double currentLon, double range) {
+		DBHelper helper = new DBHelper();
+		SQLiteDatabase db = helper.getReadableDatabase();
+		Cursor hits = db.query(TABLE_STATIONS, 
+				null,
+				ModuleDatabase.col_stationLatitute +" > ? and "+ ModuleDatabase.col_stationLatitute +" < ? and "+
+						ModuleDatabase.col_stationLongitude +" > ? and "+ ModuleDatabase.col_stationLongitude +" < ?",
+
+						new String[] {
+				Double.toString(currentLat - range),
+				Double.toString(currentLat + range),
+				Double.toString(currentLon - range),
+				Double.toString(currentLon + range),
+		},
+		null, null, null);
+
+		hits.moveToFirst();
+		while(!hits.isAfterLast()) {
+			Log.v("elias", hits.getString(hits.getColumnIndex(col_stationName)));
+			hits.moveToNext();
+		}
 		
 	}
 	
@@ -89,8 +114,8 @@ public class ModuleDatabase {
 					col_stationName + " text," +
 					col_stationAddress + " text," +
 					col_stationArea + " text," +
-					col_stationLatitute + " text," +
-					col_stationLongitude + " text," +
+					col_stationLatitute + " real," +
+					col_stationLongitude + " real," +
 					col_fuelPetrol90 + " integer," +
 					col_fuelPetrol95 + " integer," +
 					col_fuelPetrolEuro + " integer," +
